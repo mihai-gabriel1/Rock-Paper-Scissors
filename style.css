@@ -1,0 +1,15 @@
+* {
+  margin: 0 auto;
+}
+
+body {
+  background-image: linear-gradient(to right, rgb(228, 166, 166), yellow);
+}
+
+h1 {
+  font-size: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
