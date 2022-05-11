@@ -4,18 +4,19 @@ function computerPlay() {
   let values = ["ROCK", "PAPER", "SCISSORS"];
   return values[Math.floor(Math.random() * 3)];
 }
-console.log(computerPlay());
 
 // 2) Make a func that plays a single round of Rock paper scissors;
 // It should take 2 parameters, and return a string that declares the winner so "You loose. Paper beats rock."
 
 let playerscore = 0;
 let computerscore = 0;
-let winningPart = "";
+// let winningPart = "";
 
-let playerSelection = "ROCK";
+let playerSelection = prompt("Rock paper scissors?").toUpperCase();
 console.log(playerSelection);
 let computerSelection = computerPlay();
+console.log(computerSelection);
+// prompt("Rock, paper scissors?");
 function playRound(playerSelection, computerSelection) {
   // LOOSING SECTION - START
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
@@ -46,11 +47,29 @@ function playRound(playerSelection, computerSelection) {
     console.log("ROCK-ROCK - TIE");
   }
   // TIE SECTION END
-  console.log("Computer score - ", computerscore);
-  console.log("Player Score -", playerscore);
+  console.log(`Computer score - ${computerscore}`);
+  console.log(`Player Score - ${playerscore}`);
 }
-playRound(playerSelection, computerSelection);
+// playRound(playerSelection, computerSelection);
 
-// Rezolva afisarea scorului corect, cat si intarzierea mesajului, eg rock beats scissors dar in consola este afisat rock rock;
-// intreaba daca poate fi vorba de vreun bug la dev tools si se intampla asta;
-// referitor la functia game, vezi cum faci promptul cand incepe jocul
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+  let gamesplayed = 0;
+  let gameWinner = "";
+
+  for (let i = 1; i <= 5; i++) {
+    let overallWinner = playRound(playerSelection, computerPlay());
+
+    if (overallWinner === playerSelection) {
+      playerscore++;
+    } else if (overallWinner === computerSelection) {
+      computerScore++;
+    }
+  }
+  if (playerScore > computerScore) {
+    gamesplayed++;
+    gameWinner = "Player";
+  }
+}
+game();
