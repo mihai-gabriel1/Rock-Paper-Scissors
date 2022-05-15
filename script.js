@@ -10,15 +10,21 @@ function computerPlay() {
 
 let playerscore = 0;
 let computerscore = 0;
-// let winningPart = "";
+let winningPart = "";
 
-let playerSelection = prompt("Rock paper scissors?").toUpperCase();
-console.log(playerSelection);
+function playerChoice() {
+  let playerSelection = prompt("Rock paper scissors?").toUpperCase();
+  return playerSelection;
+}
+let playerSelection = playerChoice();
 let computerSelection = computerPlay();
 console.log(computerSelection);
+console.log(playerSelection);
 // prompt("Rock, paper scissors?");
 function playRound(playerSelection, computerSelection) {
   // LOOSING SECTION - START
+  console.log(computerSelection);
+  console.log(playerSelection);
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
     console.log("You loose. Paper beats rock!" && computerscore++);
   } else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
@@ -59,7 +65,7 @@ function game() {
   let gameWinner = "";
 
   for (let i = 1; i <= 5; i++) {
-    let overallWinner = playRound(playerSelection, computerPlay());
+    let overallWinner = playRound(playerChoice(), computerPlay());
 
     if (overallWinner === playerSelection) {
       playerscore++;
