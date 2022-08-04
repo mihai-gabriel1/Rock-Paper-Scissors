@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <body>
-    <h1 style=>Rock Paper Scissors</h1>
-    <div class="description">
-    <p> For now, the game is only playable via console.</p> 
-     <p> Open up the developers console and have fun!</p> </div>
+    <h1>Rock Paper Scissors</h1>
+
+    <div class="buttons">
+      <button id="rockBtn" value="ROCK" onclick="playerSelection(this.value)">
+        Rock
+      </button>
+      <button id="paperBtn" value="PAPER" onclick="playerSelection(this.value)">
+        Paper
+      </button>
+      <button
+        id="scissorsBtn"
+        value="SCISSORS"
+        onclick="playerSelection(this.value)"
+      >
+        Scissors
+      </button>
+    </div>
+    <div class="score-tracker">
+      <div>Player Score - <span id="playerscore">0</span></div>
+      <div>Computer Score - <span id="computerscore">0</span></div>
+    </div>
+    <!-- <input id="rockBtn" value="ROCK" onclick="playerSelection(this.value)" /> -->
   </body>
+  <script src="script.js" defer></script>
 </html>

@@ -13,53 +13,80 @@ let overallWinner;
 let computerScore = 0;
 let playerScore = 0;
 
-function playerSelection() {
-  let selection = prompt("Rock, Paper, Scissors?").toUpperCase();
-  console.log(selection);
-  return selection;
+// function playerSelection() {
+//   let selection = prompt("Rock, Paper, Scissors?").toUpperCase();
+//   console.log(selection);
+//   return selection;
+// }
+
+function playerSelection(val) {
+  // console.log(val);
+  return val;
 }
 
 function playRound(playerSelection, computerPlay) {
-  if (playerSelection === "ROCK" && computerPlay === "PAPER") {
+  if (playerSelection == "ROCK" && computerPlay == "PAPER") {
     console.log("You lost, paper beats rock."), computerScore++;
-  } else if (playerSelection === "ROCK" && computerPlay === "SCISSORS") {
+    computerScoreHtml.innerHTML = computerScore;
+  } else if (playerSelection == "ROCK" && computerPlay == "SCISSORS") {
     console.log("You won, Rock beats Scissors."), playerScore++;
-  } else if (playerSelection === "ROCK" && computerPlay === "ROCK") {
+    playerScoreHtml.innerHTML = playerScore;
+  } else if (playerSelection == "ROCK" && computerPlay == "ROCK") {
     console.log("Both players picked Rock, its a tie.");
-  } else if (playerSelection === "SCISSORS" && computerPlay === "ROCK") {
+  } else if (playerSelection == "SCISSORS" && computerPlay == "ROCK") {
     console.log("You lost, Rock beats Scissors."), computerScore++;
-  } else if (playerSelection === "SCISSORS" && computerPlay === "PAPER") {
+    computerScoreHtml.innerHTML = computerScore;
+  } else if (playerSelection == "SCISSORS" && computerPlay == "PAPER") {
     console.log("You won, Scissors beat Paper!"), playerScore++;
-  } else if (playerSelection === "SCISSORS" && computerPlay === "SCISSORS") {
+    playerScoreHtml.innerHTML = playerScore;
+  } else if (playerSelection == "SCISSORS" && computerPlay == "SCISSORS") {
     console.log("Both players picked Scissors, its a tie.");
-  } else if (playerSelection === "PAPER" && computerPlay === "ROCK") {
+  } else if (playerSelection == "PAPER" && computerPlay == "ROCK") {
     console.log("You won, Paper beats Rock!"), playerScore++;
-  } else if (playerSelection === "PAPER" && computerPlay === "SCISSORS") {
+    playerScoreHtml.innerHTML = playerScore;
+  } else if (playerSelection == "PAPER" && computerPlay == "SCISSORS") {
     console.log("You lost, Scissors beat Paper."), computerScore++;
-  } else if (playerSelection === "PAPER" && computerPlay === "PAPER") {
+    computerScoreHtml.innerHTML = computerScore;
+  } else if (playerSelection == "PAPER" && computerPlay == "PAPER") {
     console.log("Both players picked Paper, it is a tie!");
-  } else {
-    console.log(
-      `You\'ve picked *${playerSelection}*` + " ",
-      "which is a wrong input."
-    );
   }
 }
 // playRound(playerSelection(), computerPlay());
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    playRound(playerSelection(), computerPlay());
-    console.log(`Computer Score - ${computerScore} `);
-    console.log(`Player Score - ${playerScore}`);
-  }
-  console.log("The game is over!");
+function game(e) {
+  console.log(e.currentTarget, "button value");
+  const selectedValue = e.currentTarget.value;
+  playRound(playerSelection(selectedValue), computerPlay());
   if (computerScore > playerScore) {
     console.log(
       "The overall winner is the AI. Pretty shameful, don't you think?"
     );
+    console.log("The game is over!");
   } else if (playerScore > computerScore) {
-    console.log("You are the overall winner! Congratulations!");
+    console.log(`Computer Score - ${computerScore} `);
+    console.log(`Player Score - ${playerScore}`);
   }
+  console.log("You are the overall winner! Congratulations!");
 }
-game();
+// game();
+
+const rockBtn = document.querySelector("#rockBtn");
+rockBtn.addEventListener("click", game);
+
+const paperBtn = document.querySelector("#paperBtn");
+paperBtn.addEventListener("click", game);
+
+const scissorsBtn = document.querySelector("#scissorsBtn");
+scissorsBtn.addEventListener("click", game);
+
+const playerScoreHtml = document.querySelector("#playerscore");
+const computerScoreHtml = document.querySelector("#computerscore");
+
+console.log(computerScoreHtml);
+console.log(playerScoreHtml);
+
+// Reia ce ai facut cu dragos : 1) id-ul spanurilor si cum ai facut sa fie vizibile pe ecran; 2) cum ai facut ca valoarea butoanelor apasate sa fie vizibila in
+// clip eventlistener
+// Div-uri selectii jucator, cpu
+// evidentierea butonului apasat
+// clip react
