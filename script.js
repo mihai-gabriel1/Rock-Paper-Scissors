@@ -69,18 +69,18 @@ function game(e) {
   console.log(e.currentTarget, "button value");
   const selectedValue = e.currentTarget.value;
   playRound(playerSelection(selectedValue), computerPlay());
-  if (computerScore > playerScore) {
-    console.log(
-      "The overall winner is the AI. Pretty shameful, don't you think?"
-    );
-    console.log("The game is over!");
-  } else if (playerScore > computerScore) {
-    console.log(`Computer Score - ${computerScore} `);
-    console.log(`Player Score - ${playerScore}`);
-  }
-  console.log("You are the overall winner! Congratulations!");
+  //   if (computerScore > playerScore) {
+  //     console.log(
+  //       "The overall winner is the AI. Pretty shameful, don't you think?"
+  //     );
+  //     console.log("The game is over!");
+  //   } else if (playerScore > computerScore) {
+  //     console.log(`Computer Score - ${computerScore} `);
+  //     console.log(`Player Score - ${playerScore}`);
+  //   }
+  //   console.log("You are the overall winner! Congratulations!");
+  // }
 }
-// game();
 
 const rockBtn = document.querySelector("#rockBtn");
 rockBtn.addEventListener("click", game);
@@ -97,6 +97,13 @@ const computerScoreHtml = document.querySelector("#computerscore");
 const playerPickHtml = document.querySelector("#playerpick");
 const cpuPickHtml = document.querySelector("#cpupick");
 
+const playerWin = document.querySelector("#playerWin");
+
+const resetBtn = document.querySelector(".reset");
+
+//refresh page for new game
+resetBtn.addEventListener("click", () => location.reload());
+
 console.log(computerScoreHtml);
 console.log(playerScoreHtml);
 
@@ -105,3 +112,14 @@ console.log(playerScoreHtml);
 // Div-uri selectii jucator, cpu
 // evidentierea butonului apasat
 // clip react
+
+// RESETSCORE FUNCTION WHEN SCORE REACHES 5;
+// TOT ATUNCI SI MESAJUL CU OVERALL WINNER SA FIE AFISAT,
+// NU DEAMPULEA CUM E ACUM
+
+// AS STATED IN THE REVISITING PAGE, TRY TO CHANGE ALL THE
+//  CONSOLE LOGS INTO DIVS, DISPLAYING INTO THE DOM
+// REFACTOR THE IFS FROM COMPUTERPLAY VS SELECTEDVALUE
+// SA FIE CODUL CAT MAI SCURT
+
+// SI DUPA, VEZI CLIPURILE DE LA DRAGOS!
