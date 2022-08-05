@@ -1,7 +1,7 @@
 * {
   margin: 0 auto;
   box-sizing: border-box;
-  width: 900px;
+  width: 1200px;
 }
 
 h1 {
@@ -17,9 +17,23 @@ h1 {
 
 .buttons {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   margin-top: 6rem;
   padding: 2rem;
+}
+
+.active {
+  background-color: white;
+  color: blue;
+}
+
+#rockBtn:hover,
+#paperBtn:hover,
+#scissorsBtn:hover {
+  letter-spacing: 5px;
+  color: #e9f01d;
+  cursor: crosshair;
+  box-shadow: 2px 8px rgb(181, 180, 180);
 }
 
 #paperBtn,
@@ -65,10 +79,13 @@ h1 {
 }
 
 .game-decissions {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
   margin-top: 3rem;
+  font-size: 20px;
+  color: rgb(80, 53, 53);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
 }
 
 #playerpick,
@@ -87,4 +104,10 @@ h1 {
   font-size: 20px;
   width: 20rem;
   margin-top: 4rem;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  max-width: 50rem;
 }
