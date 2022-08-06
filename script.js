@@ -57,7 +57,7 @@ function game(e) {
   const selectedValue = e.currentTarget.value;
   playRound(playerSelection(selectedValue), computerPlay());
   if (computerScore == 5) {
-    const cpuWinner = "The CPU has won. Pretty shameful, don't  you think?";
+    const cpuWinner = "The CPU has won. Pretty shameful, don't  you think? Reset the score if you think you can handle a rematch!";
     console.log(cpuWinner);
     cpuWin.textContent = cpuWinner;
   } else if (playerScore == 5) {
