@@ -105,6 +105,12 @@ h3 {
   /* flex-direction: column; */
 }
 
+#playerWin {
+  display: flex;
+  justify-content: center;
+  
+}
+
 #playerpick,
 #cpupick {
   color: rgb(23, 132, 132);
