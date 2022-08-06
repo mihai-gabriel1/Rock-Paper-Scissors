@@ -65,6 +65,12 @@ function game(e) {
     console.log(playerWinner);
     playerWin.textContent = playerWinner;
   }
+  // Disable buttons, dictating the game is over whenever a player reaches the score of 5.
+  if (computerScore == 5 || playerScore == 5) {
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorsBtn.disabled = true;
+  }
 }
 
 const rockBtn = document.querySelector("#rockBtn");
@@ -89,20 +95,3 @@ const playerWin = document.querySelector("#playerWin");
 //refresh page for new game
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", () => location.reload());
-
-// Reia ce ai facut cu dragos : 1) id-ul spanurilor si cum ai facut sa fie vizibile pe ecran; 2) cum ai facut ca valoarea butoanelor apasate sa fie vizibila in
-// clip eventlistener
-// Div-uri selectii jucator, cpu
-// evidentierea butonului apasat
-// clip react
-
-// RESETSCORE FUNCTION WHEN SCORE REACHES 5;
-// TOT ATUNCI SI MESAJUL CU OVERALL WINNER SA FIE AFISAT,
-// NU DEAMPULEA CUM E ACUM
-
-// AS STATED IN THE REVISITING PAGE, TRY TO CHANGE ALL THE
-//  CONSOLE LOGS INTO DIVS, DISPLAYING INTO THE DOM
-// REFACTOR THE IFS FROM COMPUTERPLAY VS SELECTEDVALUE
-// SA FIE CODUL CAT MAI SCURT
-
-// SI DUPA, VEZI CLIPURILE DE LA DRAGOS!
