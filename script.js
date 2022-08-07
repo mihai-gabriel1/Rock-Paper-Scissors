@@ -53,8 +53,8 @@ function playRound(playerSelection, computerPlay) {
 }
 
 function game(e) {
-  console.log(e.currentTarget, "button value");
   const selectedValue = e.currentTarget.value;
+  console.log(e.currentTarget, "button value");
   playRound(playerSelection(selectedValue), computerPlay());
   if (computerScore == 5) {
     const cpuWinner = "The CPU has won. Pretty shameful, don't  you think?";
@@ -73,13 +73,13 @@ function game(e) {
   }
 }
 
-const rockBtn = document.querySelector("#rockBtn");
+const rockBtn = document.querySelector(".rockBtn");
 rockBtn.addEventListener("click", game);
 
-const paperBtn = document.querySelector("#paperBtn");
+const paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener("click", game);
 
-const scissorsBtn = document.querySelector("#scissorsBtn");
+const scissorsBtn = document.querySelector(".scissorsBtn");
 scissorsBtn.addEventListener("click", game);
 
 const playerScoreHtml = document.querySelector("#playerscore");
@@ -95,3 +95,12 @@ const playerWin = document.querySelector("#playerWin");
 //refresh page for new game
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", () => location.reload());
+
+let buttons = document.querySelectorAll('button');
+
+buttons.forEach(button => {
+  button.addEventListener('click', function () {
+    buttons.forEach(btn => btn.classList.remove('active'));
+    this.classList.add('active')
+  })
+})
