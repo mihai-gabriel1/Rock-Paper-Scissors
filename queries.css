@@ -1,6 +1,13 @@
 /* Bellow 900px, for smaller screens! */
 
 @media (max-width: 54rem) {
+  html {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: none;
+    border-right: none;
+  }
+
   h1 {
     font-size: 50px;
   }
@@ -33,6 +40,13 @@
 }
 
 @media (max-width: 46rem) {
+  html {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: none;
+    border-right: none;
+  }
+
   h1 {
     font-size: 35px;
   }
@@ -72,6 +86,13 @@
 }
 
 @media (max-width: 35rem) {
+  html {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: none;
+    border-right: none;
+  }
+
   h1 {
     font-size: 20px;
   }
