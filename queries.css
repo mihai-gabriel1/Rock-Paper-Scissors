@@ -1,0 +1,125 @@
+/* Bellow 900px, for smaller screens! */
+
+@media (max-width: 54rem) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .score-tracker {
+    font-size: 26px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .img-button {
+    width: 100px;
+    height: 100px;
+  }
+
+  .reset {
+    padding: 0.5rem;
+    width: 100px;
+  }
+}
+
+@media (max-width: 46rem) {
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+
+  .playerSelected,
+  #playerpick {
+    font-size: 20px;
+  }
+
+  .cpuSelected,
+  #cpupick {
+    font-size: 20px;
+  }
+
+  .score-tracker {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .buttons {
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
+  .img-button {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 35rem) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  h3 {
+    font-size: 8px;
+  }
+
+  .selectedChoices {
+    margin-top: 1rem;
+  }
+
+  .playerSelected,
+  #playerpick {
+    font-size: 10px;
+  }
+
+  .cpuSelected,
+  #cpupick {
+    font-size: 10px;
+  }
+
+  .score-tracker {
+    font-size: 12px;
+  }
+
+  .buttons {
+    gap: 5px;
+    margin-top: 2rem;
+  }
+
+  .reset {
+    margin-top: 0.5rem;
+    padding: 5px;
+  }
+
+  .img-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  #cpuWin,
+  #playerWin {
+    font-size: 16px;
+    margin-top: 0.3rem;
+  }
+}
