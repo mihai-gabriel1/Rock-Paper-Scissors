@@ -4,18 +4,19 @@
   max-width: 900px;
 }
 
+html {
+  border: 5px solid black;
+}
 
 h1 {
   font-size: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
   background: -webkit-linear-gradient(rgb(127, 69, 69), rgb(200, 168, 168));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 
 h2 {
   display: flex;
@@ -96,7 +97,6 @@ h3 {
 }
 
 .game-decisions {
-  margin-top: 3rem;
   font-size: 20px;
   color: rgb(80, 53, 53);
   font-weight: bold;
@@ -109,12 +109,16 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(30, 115, 213);
+  font-size: 22px;
 }
 
 #cpuWin {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(30, 115, 213);
+  font-size: 22px;
 }
 
 #playerpick,
@@ -132,7 +136,8 @@ h3 {
   font-weight: bold;
   font-size: 20px;
   width: 20rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  margin-bottom: 5px;
 }
 
 .reset:hover {
