@@ -96,30 +96,38 @@ h3 {
   font-size: 20px;
   color: rgb(80, 53, 53);
   font-weight: bold;
-  /* display: flex;
-  justify-content: center; */
-  /* flex-direction: column; */
 }
 
 #playerWin {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(30, 115, 213);
+  color: rgb(255, 0, 0);
   font-size: 22px;
+  margin-top: 10px;
 }
 
 #cpuWin {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(30, 115, 213);
+  color: rgb(255, 0, 0);
   font-size: 22px;
+  margin-top: 10px;
 }
 
 #playerpick,
 #cpupick {
   color: rgb(23, 132, 132);
+}
+
+.tieRound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 5px; */
+  font-size: 25px;
+  color: rgb(255, 0, 0);
 }
 
 .reset {

@@ -13,42 +13,46 @@ function playerSelection(val) {
 }
 
 function playRound(playerSelection, computerPlay) {
-  if (playerSelection == "ROCK" && computerPlay == "PAPER") {
-    console.log("You lost, paper beats rock."), computerScore++;
-    computerScoreHtml.textContent = computerScore;
-    playerPickHtml.textContent = playerSelection;
-    cpuPickHtml.textContent = computerPlay;
-  } else if (playerSelection == "ROCK" && computerPlay == "SCISSORS") {
-    console.log("You won, Rock beats Scissors."), playerScore++;
+  if (playerSelection == "ROCK" && computerPlay == "SCISSORS") {
+    playerScore++;
     playerScoreHtml.textContent = playerScore;
     playerPickHtml.textContent = playerSelection;
     cpuPickHtml.textContent = computerPlay;
-  } else if (playerSelection == "ROCK" && computerPlay == "ROCK") {
-    console.log("Both players picked Rock, its a tie.");
-  } else if (playerSelection == "SCISSORS" && computerPlay == "ROCK") {
-    console.log("You lost, Rock beats Scissors."), computerScore++;
-    computerScoreHtml.textContent = computerScore;
-    playerPickHtml.textContent = playerSelection;
-    cpuPickHtml.textContent = computerPlay;
-  } else if (playerSelection == "SCISSORS" && computerPlay == "PAPER") {
-    console.log("You won, Scissors beat Paper!"), playerScore++;
-    playerScoreHtml.textContent = playerScore;
-    playerPickHtml.textContent = playerSelection;
-    cpuPickHtml.textContent = computerPlay;
-  } else if (playerSelection == "SCISSORS" && computerPlay == "SCISSORS") {
-    console.log("Both players picked Scissors, its a tie.");
   } else if (playerSelection == "PAPER" && computerPlay == "ROCK") {
-    console.log("You won, Paper beats Rock!"), playerScore++;
+    playerScore++;
     playerScoreHtml.textContent = playerScore;
+    playerPickHtml.textContent = playerSelection;
+    cpuPickHtml.textContent = computerPlay;
+    tieHtml.textContent = "";
+  } else if (playerSelection == "SCISSORS" && computerPlay == "PAPER") {
+    playerScore++;
+    playerScoreHtml.textContent = playerScore;
+    playerPickHtml.textContent = playerSelection;
+    cpuPickHtml.textContent = computerPlay;
+  } else if (playerSelection == "ROCK" && computerPlay == "PAPER") {
+    computerScore++;
+    computerScoreHtml.textContent = computerScore;
     playerPickHtml.textContent = playerSelection;
     cpuPickHtml.textContent = computerPlay;
   } else if (playerSelection == "PAPER" && computerPlay == "SCISSORS") {
-    console.log("You lost, Scissors beat Paper."), computerScore++;
+    computerScore++;
     computerScoreHtml.textContent = computerScore;
     playerPickHtml.textContent = playerSelection;
     cpuPickHtml.textContent = computerPlay;
-  } else if (playerSelection == "PAPER" && computerPlay == "PAPER") {
-    console.log("Both players picked Paper, it is a tie!");
+  } else if (playerSelection == "SCISSORS" && computerPlay == "ROCK") {
+    computerScore++;
+    computerScoreHtml.textContent = computerScore;
+    playerPickHtml.textContent = playerSelection;
+    cpuPickHtml.textContent = computerPlay;
+  } else if (playerSelection === computerPlay) {
+    let tieMessage = `Both players picked ${playerSelection}. It's a tie.`;
+    console.log(tieMessage);
+    tieHtml.textContent = tieMessage;
+    playerPickHtml.textContent = playerSelection;
+    cpuPickHtml.textContent = playerSelection;
+  }
+  if (playerSelection !== computerPlay) {
+    tieHtml.textContent = "";
   }
 }
 
@@ -91,16 +95,17 @@ const playerPickHtml = document.querySelector("#playerpick");
 const cpuPickHtml = document.querySelector("#cpupick");
 
 const playerWin = document.querySelector("#playerWin");
+const tieHtml = document.querySelector("#tieGame");
 
 //refresh page for new game
 const resetBtn = document.querySelector(".reset");
 resetBtn.addEventListener("click", () => location.reload());
 
-let buttons = document.querySelectorAll('button');
+let buttons = document.querySelectorAll("button");
 
-buttons.forEach(button => {
-  button.addEventListener('click', function () {
-    buttons.forEach(btn => btn.classList.remove('active'));
-    this.classList.add('active')
-  })
-})
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
+  });
+});
