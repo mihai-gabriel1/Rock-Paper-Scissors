@@ -143,4 +143,8 @@
     font-size: 16px;
     margin-top: 0.3rem;
   }
+
+  .tieRound {
+    font-size: 12px;
+  }
 }
