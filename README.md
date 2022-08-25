@@ -1,5 +1,7 @@
 # Rock-Paper-Scissors
 
+Live preview 🚀 - https://rpsgame-rockpaper-scissors.netlify.app/
+
 Rock paper scissors, a web-responsive game created with HTML, CSS and Javascript.
 
 # Technologies Used
